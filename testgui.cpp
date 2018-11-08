@@ -47,6 +47,10 @@ void TestGui::testGui()
    qDebug() << "Finished testGui";
    QTest::qSleep(1000);
 }
+void TestGui::init()
+{
+    qDebug() << "====I N I T I A L I Z I N G====";
+}
 
 
 

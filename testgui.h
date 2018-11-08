@@ -23,6 +23,7 @@ private slots:
     void testGui();
     void testGui2();
     void testGui2_data();
+    void init();
 };
 
 #endif // TESTGUI_H

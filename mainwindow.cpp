@@ -45,7 +45,7 @@ QString MainWindow::encodeBase64(QString text)
     b.append(text);
     QString res;
     QString result = b.toBase64();
-    res = QString("Base64 encode of %1 "). arg(text).arg(result);
+    res = QString("Base64 encode of %1 is %2"). arg(text).arg(result);
 
     ui->textEdit->setText(ui->textEdit->toPlainText()+ "\n" + res );
    return  b.toBase64();
