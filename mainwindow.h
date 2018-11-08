@@ -21,6 +21,7 @@ private slots:
     void on_pushButton_clicked();
     void slotDecode();
 void update();
+void liveTest();
 private:
     Ui::MainWindow *ui;
     int i=0;

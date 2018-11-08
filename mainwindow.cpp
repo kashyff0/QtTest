@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 connect (ui->pushButton_2,SIGNAL(clicked(bool)),this, SLOT(slotDecode()));
 
-  QTimer::singleShot(2000, this, SLOT(update()));
+connect (ui->pushButton_3,SIGNAL(clicked(bool)),this, SLOT(liveTest()));
 
 }
 
@@ -43,6 +43,11 @@ QString MainWindow::encodeBase64(QString text)
         return text;
     QByteArray b;
     b.append(text);
+    QString res;
+    QString result = b.toBase64();
+    res = QString("Base64 encode of %1 "). arg(text).arg(result);
+
+    ui->textEdit->setText(ui->textEdit->toPlainText()+ "\n" + res );
    return  b.toBase64();
 
 }
@@ -54,6 +59,10 @@ QString MainWindow::decodeBase64(QString text)
     QByteArray b;
     b = b.append(text);
     b = QByteArray::fromBase64(b);
+    QString result = b;
+    QString res = QString("Base64 decode  of %1 is %2"). arg(text).arg(result);
+
+    ui->textEdit->setText(ui->textEdit->toPlainText() + "\n" + res );
     return b;
 }
 
@@ -62,4 +71,8 @@ void MainWindow::slotDecode()
     QString text = ui->lineEdit->text();
     QString text2=decodeBase64(text);
     ui->lineEdit->setText(text2);
+}
+void MainWindow::liveTest()
+{
+      QTimer::singleShot(2000, this, SLOT(update()));
 }

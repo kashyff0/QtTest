@@ -24,6 +24,7 @@ void TestGui::testEncodeDecode()
 
    QVERIFY2(text3 ==  text1, "Fail");
    qDebug() << "finished testEncodeDecode";
+   QTest::qSleep(1000);
 }
 void TestGui::testGui()
 {
@@ -35,6 +36,7 @@ void TestGui::testGui()
     le->clear();
     QTest::keyClicks(le,testStr);
     QString leText = le->text();
+     QTest::qSleep(1000);
     QVERIFY2(leText == testStr,"Line Edit set text not working");
     QTest::mouseClick(p1,Qt::LeftButton);
     QString leText2 = le->text();
@@ -43,6 +45,7 @@ void TestGui::testGui()
     QString leText3 = le->text();
     QCOMPARE(leText3 ,leText);
    qDebug() << "Finished testGui";
+   QTest::qSleep(1000);
 }
 
 
@@ -58,13 +61,14 @@ void TestGui::testGui2()
     QLineEdit *le = ui->lineEdit;
     le->clear();
     QTest::keyClicks(le,Str);
+     QTest::qSleep(1000);
     QTest::mouseClick(p1,Qt::LeftButton);
     QString enc = le->text();
     QCOMPARE(enc ,B64Encoded );
     QTest::mouseClick(p2,Qt::LeftButton);
     QString dec = le->text();
     QCOMPARE(dec , Str);
-
+    QTest::qSleep(1500);
 }
 void TestGui::testGui2_data()
 {
