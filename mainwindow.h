@@ -15,9 +15,11 @@ friend class TestGui;
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-
+QString encodeBase64(QString text);
+QString decodeBase64(QString text);
 private slots:
     void on_pushButton_clicked();
+    void slotDecode();
 void update();
 private:
     Ui::MainWindow *ui;

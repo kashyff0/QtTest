@@ -19,8 +19,10 @@ signals:
 
 public slots:
 private slots:
-    void testGuiClick();
-
+    void testEncodeDecode();
+    void testGui();
+    void testGui2();
+    void testGui2_data();
 };
 
 #endif // TESTGUI_H
